@@ -1,0 +1,2066 @@
+{
+	"info": {
+		"_postman_id": "90517236-8504-4b6f-a04e-4e12dec956de",
+		"name": "accouting dashboard",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26812826",
+		"_collection_link": "https://solar-robot-169559.postman.co/workspace/Team-Workspace~e5bbc995-82cf-49c0-8408-fae652292054/collection/26812826-90517236-8504-4b6f-a04e-4e12dec956de?action=share&source=collection_link&creator=26812826"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "monaem",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "uuuuuasaauuSD12",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "nyt",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "omaro",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin_login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "monaem@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "9999999aA",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:4444/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"JWT\", pm.response.json().token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "monaem@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/auth/forgetPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"auth",
+								"forgetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify-Rest-Code",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"JWT\", pm.response.json().token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "resetCode",
+									"value": "722138",
+									"type": "text"
+								},
+								{
+									"key": "resetCode",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/auth/verifyRestCode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"auth",
+								"verifyRestCode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"JWT\", pm.response.json().token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "monaem@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/auth/resetPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"auth",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_new_admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "sasa",
+									"type": "text"
+								},
+								{
+									"key": "Gmail_Acc",
+									"value": "manemosama@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "ggggg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/auth/create_new_admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"auth",
+								"create_new_admin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "employees",
+			"item": [
+				{
+					"name": "get_all_employees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4444/employee/get_all_employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"employee",
+								"get_all_employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_employee",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4444/employee/delete_employee/6723366df048064b6e3bc77a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"employee",
+								"delete_employee",
+								"6723366df048064b6e3bc77a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_one_employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4444/employee/get_one_employee/670b8a447c914d3b5cac8428",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"employee",
+								"get_one_employee",
+								"670b8a447c914d3b5cac8428"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_employee",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "nn",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "nyt",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "branch",
+									"value": "670ba170f1f7bbe430ae856b",
+									"description": "so important for relation",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "admin",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/employee/update_employee/670b8a447c914d3b5cac8428",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"employee",
+								"update_employee",
+								"670b8a447c914d3b5cac8428"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_loged_in_employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4444/employee/get_loged_in_employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"employee",
+								"get_loged_in_employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search_On_employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "search",
+									"value": "omar",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/employee/search_On_employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"employee",
+								"search_On_employee"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "branches",
+			"item": [
+				{
+					"name": "show_All_branches",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4444/branches/show_All_branches",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"branches",
+								"show_All_branches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_branch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "gizaa",
+									"type": "text"
+								},
+								{
+									"key": "supervisor_name",
+									"value": "محمد",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "34",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "2222",
+									"type": "text"
+								},
+								{
+									"key": "mobile_Number",
+									"value": "323",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/branches/add_branch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"branches",
+								"add_branch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show_one_branch",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4444/branches/show_one_branch/672ca47cfa34997e1bd7df09",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"branches",
+								"show_one_branch",
+								"672ca47cfa34997e1bd7df09"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_branch",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4444/branches/delete_branch/67179b82ed3117a93c414a85",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"branches",
+								"delete_branch",
+								"67179b82ed3117a93c414a85"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_branch",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "mobile_Number",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "2222",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "34",
+									"type": "text"
+								},
+								{
+									"key": "supervisor_name",
+									"value": "s",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "سكندريه",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/branches/update_branch/67235706b54e751c735372cb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"branches",
+								"update_branch",
+								"67235706b54e751c735372cb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_course_to_branch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "course_ID",
+									"value": "670bb709b56a05df4002e172",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/branches/add_course_to_branch/67235706b54e751c735372cb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"branches",
+								"add_course_to_branch",
+								"67235706b54e751c735372cb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_new_employee_to_branch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "omaroa",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "uuuuuasaauuSD12",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "data entry",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/branches/add_employee_to_branch/67235be2b54e751c735373ba",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"branches",
+								"add_employee_to_branch",
+								"67235be2b54e751c735373ba"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_course_from_branch",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "course_ID",
+									"value": "670bb709b56a05df4002e172",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/branches/delete_course_from_branch/670ba170f1f7bbe430ae856b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"branches",
+								"delete_course_from_branch",
+								"670ba170f1f7bbe430ae856b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show_branch_courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4444/branches/show_branch_courses/67235706b54e751c735372cb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"branches",
+								"show_branch_courses",
+								"67235706b54e751c735372cb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show_branch_employees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4444/branches/show_branch_employees/67235be2b54e751c735373ba",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"branches",
+								"show_branch_employees",
+								"67235be2b54e751c735373ba"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show_course_students_of_branch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "course_ID",
+									"value": "670bb8479e447e9f37bd3fb3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/branches/show_course_students_of_branch/67235706b54e751c735372cb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"branches",
+								"show_course_students_of_branch",
+								"67235706b54e751c735372cb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filter_course_students_By_Limititions_of_branch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "course_ID",
+									"value": "670bb8479e447e9f37bd3fb3",
+									"type": "text"
+								},
+								{
+									"key": "Total_course_payment_Limititions",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/branches/filter_course_students_By_Limititions_of_branch/67235706b54e751c735372cb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"branches",
+								"filter_course_students_By_Limititions_of_branch",
+								"67235706b54e751c735372cb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_payment_to_branch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "payment",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "payment_name",
+									"value": "sssss",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/branches/add_payment_to_branch/67235706b54e751c735372cb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"branches",
+								"add_payment_to_branch",
+								"67235706b54e751c735372cb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_expenses_to_branch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "expenses",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "expenses_name",
+									"value": "sssss",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/branches/add_expenses_to_branch/67235706b54e751c735372cb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"branches",
+								"add_expenses_to_branch",
+								"67235706b54e751c735372cb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "courses",
+			"item": [
+				{
+					"name": "show_one_course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4444/course/show_one_course/670bb8479e447e9f37bd3fb3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"course",
+								"show_one_course",
+								"670bb8479e447e9f37bd3fb3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show_All_courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4444/course/show_All_courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"course",
+								"show_All_courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "vvs",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "ccccccccccccc",
+									"type": "text"
+								},
+								{
+									"key": "cost",
+									"value": "2000",
+									"type": "text"
+								},
+								{
+									"key": "Number_of_hours",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/course/add_course",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"course",
+								"add_course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4444/course/delete_course/6707842463e9d6cec7c99697",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"course",
+								"delete_course",
+								"6707842463e9d6cec7c99697"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_course",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "progam",
+									"type": "text"
+								},
+								{
+									"key": "Number_of_hours",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "Cost",
+									"value": "25",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "vc",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/course/update_course/6707bdc861dc47d722edc3a3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"course",
+								"update_course",
+								"6707bdc861dc47d722edc3a3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_student_to_course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "student_name",
+									"value": "monaem",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "national_ID",
+									"value": "232322242",
+									"type": "text"
+								},
+								{
+									"key": "course_ID",
+									"value": "670bdc770b6e0e6e968ceb22",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "student_name",
+									"value": "omar",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/course/add_student_to_course/670bb709b56a05df4002e172",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"course",
+								"add_student_to_course",
+								"670bb709b56a05df4002e172"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search_On_course_by_name",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "search",
+									"value": "s",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/course/search_On_course_by_name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"course",
+								"search_On_course_by_name"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "students",
+			"item": [
+				{
+					"name": "All_branch_students_by_Academic_year_OrBranch_OrAll",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Academic_year",
+									"value": "2023",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Academic_year",
+									"value": "2024",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "branch",
+									"value": "670ba170f1f7bbe430ae856b",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/employee/get_All_students_with_Custom_Academic_year",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"employee",
+								"get_All_students_with_Custom_Academic_year"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_new_student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "national_ID",
+									"value": "44021132",
+									"description": "must uploud qualification_certificate and personal_ID_card\"\n}",
+									"type": "text"
+								},
+								{
+									"key": "Name",
+									"value": "omar",
+									"type": "text"
+								},
+								{
+									"key": "application",
+									"description": "qualification_certificate",
+									"type": "file",
+									"src": "postman-cloud:///1ef8c61e-fe76-4390-9d94-107fa5167866"
+								},
+								{
+									"key": "application",
+									"description": "personal_ID_card",
+									"type": "file",
+									"src": "postman-cloud:///1efa10a2-0ee2-4e80-bf61-e2b5c73130ee"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/employee/add_student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"employee",
+								"add_student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show_student_courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4444/course/show_student_courses/67232ad5df77419506b9e82e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"course",
+								"show_student_courses",
+								"67232ad5df77419506b9e82e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_Student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4444/employee/delete_Student/672cb82bfef62ed24f8cc8d1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"employee",
+								"delete_Student",
+								"672cb82bfef62ed24f8cc8d1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_student",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "national_ID",
+									"value": "25",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Name",
+									"value": "cdccd",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Year_of_qualification",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "engleish_student_Name",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "Gender",
+									"value": "ذكر",
+									"type": "text"
+								},
+								{
+									"key": "Academic_year",
+									"value": "2023",
+									"type": "text"
+								},
+								{
+									"key": "branch",
+									"value": "67322737bae60f35761ca364",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/employee/update_student/672cb82bfef62ed24f8cc8d1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"employee",
+								"update_student",
+								"672cb82bfef62ed24f8cc8d1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "application",
+									"type": "file",
+									"src": "postman-cloud:///1ef8bcd7-9793-4d80-9918-072509d07102",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1ef8bce3-745c-4d60-8ed1-6e4e1450eefe"
+								},
+								{
+									"key": "QC",
+									"type": "file",
+									"src": "postman-cloud:///1ef8c61e-fe76-4390-9d94-107fa5167866",
+									"disabled": true
+								},
+								{
+									"key": "personal_ID",
+									"type": "file",
+									"src": "postman-cloud:///1eee5f60-7624-43e0-8e50-b61fbba14055",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/employee/Update_Image/67273a2229cd4035a7ad3cbd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"employee",
+								"Update_Image",
+								"67273a2229cd4035a7ad3cbd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload_&update_Qualification_certificate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "QC",
+									"type": "file",
+									"src": "postman-cloud:///1ef8bcd7-9793-4d80-9918-072509d07102",
+									"disabled": true
+								},
+								{
+									"key": "QC",
+									"type": "file",
+									"src": "postman-cloud:///1ef8bce3-745c-4d60-8ed1-6e4e1450eefe",
+									"disabled": true
+								},
+								{
+									"key": "QC",
+									"type": "file",
+									"src": "postman-cloud:///1ef8c61e-fe76-4390-9d94-107fa5167866"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/employee/upload_Qualification_certificate/672cb82bfef62ed24f8cc8d1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"employee",
+								"upload_Qualification_certificate",
+								"672cb82bfef62ed24f8cc8d1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload_personal_ID_card",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "personal_ID",
+									"type": "file",
+									"src": "postman-cloud:///1ef8bcd7-9793-4d80-9918-072509d07102",
+									"disabled": true
+								},
+								{
+									"key": "personal_ID",
+									"type": "file",
+									"src": "postman-cloud:///1ef8bce3-745c-4d60-8ed1-6e4e1450eefe",
+									"disabled": true
+								},
+								{
+									"key": "personal_ID",
+									"type": "file",
+									"src": "postman-cloud:///1ef8c61e-fe76-4390-9d94-107fa5167866"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/employee/upload_personal_ID_card/672cb82bfef62ed24f8cc8d1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"employee",
+								"upload_personal_ID_card",
+								"672cb82bfef62ed24f8cc8d1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4444/employee/get_student/672cb82bfef62ed24f8cc8d1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"employee",
+								"get_student",
+								"672cb82bfef62ed24f8cc8d1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "payment",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "payment_name",
+									"value": "ملازم",
+									"type": "text"
+								},
+								{
+									"key": "course_ID",
+									"value": "670bb8479e447e9f37bd3fb3",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/employee/add_payment/672cb82bfef62ed24f8cc8d1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"employee",
+								"add_payment",
+								"672cb82bfef62ed24f8cc8d1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_expenses",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "course_expenses",
+									"value": "600",
+									"type": "text"
+								},
+								{
+									"key": "expenses_name",
+									"value": "كورس تمريض ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/employee/add_expenses/672cb82bfef62ed24f8cc8d1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"employee",
+								"add_expenses",
+								"672cb82bfef62ed24f8cc8d1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_course_from_student (سحب ورق )",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "student_name",
+									"value": "monaem",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "student_national_ID",
+									"value": "1653",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "course_ID",
+									"value": "670bb8479e447e9f37bd3fb3",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/course/delete_student_from_course/67232ad5df77419506b9e82e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"course",
+								"delete_student_from_course",
+								"67232ad5df77419506b9e82e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search_On_student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "search",
+									"value": "232322113",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "440",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4444/employee/search_On_student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"employee",
+								"search_On_student"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "system_actions",
+			"item": [
+				{
+					"name": "الفروع",
+					"item": [
+						{
+							"name": "show_all_branch_sysActions",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "branch_ID",
+											"value": "67235706b54e751c735372cb",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "date_from",
+											"value": "2024-11-05",
+											"type": "text"
+										},
+										{
+											"key": "date_to",
+											"value": "2024-11-05",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4444/system_actions/show_all_branch_sysActions_orAll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4444",
+									"path": [
+										"system_actions",
+										"show_all_branch_sysActions_orAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show_all_papers_withdrawals_SysActions_for_branch_OrAll",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "branch_ID",
+											"value": "67235be2b54e751c735373ba",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "date_from",
+											"value": "2024-11-05",
+											"type": "text"
+										},
+										{
+											"key": "date_to",
+											"value": "2024-11-05",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4444/system_actions/show_all_papers_withdrawals_SysActions_for_branch_OrAll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4444",
+									"path": [
+										"system_actions",
+										"show_all_papers_withdrawals_SysActions_for_branch_OrAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show_All_payment_SysActions_for_branch_orAll",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "branch_ID",
+											"value": "67235706b54e751c735372cb",
+											"type": "text"
+										},
+										{
+											"key": "date_from",
+											"value": "2024-11-05",
+											"type": "text"
+										},
+										{
+											"key": "date_to",
+											"value": "2024-11-05",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4444/system_actions/show_All_payment_SysActions_for_branch_orAll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4444",
+									"path": [
+										"system_actions",
+										"show_All_payment_SysActions_for_branch_orAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show_All_expenses_SysActions_for_branch_OrAll",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "branch_ID",
+											"value": "67235be2b54e751c735373ba",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "date_from",
+											"value": "2024-11-05",
+											"type": "text"
+										},
+										{
+											"key": "date_to",
+											"value": "2024-11-05",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4444/system_actions/show_All_expenses_SysActions_for_branch_OrAll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4444",
+									"path": [
+										"system_actions",
+										"show_All_expenses_SysActions_for_branch_OrAll"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "الموظف",
+					"item": [
+						{
+							"name": "تقرير كامل عن الموظف",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "date_from",
+											"value": "2024-11-05",
+											"type": "text"
+										},
+										{
+											"key": "date_to",
+											"value": "2024-11-05",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4444/system_actions/show_all_employee_sysActions/672364bd9e556bce646d37f5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4444",
+									"path": [
+										"system_actions",
+										"show_all_employee_sysActions",
+										"672364bd9e556bce646d37f5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "تقرير جميع عمليات الدفع لموظف و تقرير يومي",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "date",
+											"value": "2024-11-05",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4444/system_actions/show_payment_SysActions_Of_Specific_employee/672364bd9e556bce646d37f5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4444",
+									"path": [
+										"system_actions",
+										"show_payment_SysActions_Of_Specific_employee",
+										"672364bd9e556bce646d37f5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "تقرير جميع عمليات المصاريف لموظف و تقرير يومي",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "date",
+											"value": "2024-11-05",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4444/system_actions/show_expenses_SysActions_Of_Specific_employee/672364bd9e556bce646d37f5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4444",
+									"path": [
+										"system_actions",
+										"show_expenses_SysActions_Of_Specific_employee",
+										"672364bd9e556bce646d37f5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "student",
+					"item": [
+						{
+							"name": "show_all_student_sysActions",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "date_from",
+											"value": "2024-11-05",
+											"type": "text"
+										},
+										{
+											"key": "date_to",
+											"value": "2024-11-05",
+											"type": "text"
+										},
+										{
+											"key": "date_to",
+											"value": "2024-11-08",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4444/system_actions/show_all_student_sysActions/67232ad5df77419506b9e82e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4444",
+									"path": [
+										"system_actions",
+										"show_all_student_sysActions",
+										"67232ad5df77419506b9e82e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "كشف مدفوعات حساب الطالب",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:4444/system_actions/show_payment_SysActions_Of_Specific_student/67232ad5df77419506b9e82e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4444",
+									"path": [
+										"system_actions",
+										"show_payment_SysActions_Of_Specific_student",
+										"67232ad5df77419506b9e82e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "كشف مصاريف حساب الطالب",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:4444/system_actions/show_expenses_SysActions_Of_Specific_student/67232ad5df77419506b9e82e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4444",
+									"path": [
+										"system_actions",
+										"show_expenses_SysActions_Of_Specific_student",
+										"67232ad5df77419506b9e82e"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
